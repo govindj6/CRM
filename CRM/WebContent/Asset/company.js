@@ -1,0 +1,26 @@
+$('documenet').ready(function()
+{
+	$.getJSON('FetchAllCompanyJSON',{ajax:true},function(data)
+	{
+		//alert(data);
+		$('#cid').append($('<option>').val('-Select-').text('-Select-'));	 
+		$('#sid').append($('<option>').val('-Select-').text('-Select-'));	  
+		$.each(data,function(i,item)
+		{
+			$('#cid').append($('<option>').val(item.COMPANYID).text(item.COMPANYNAME));	  
+		});	
+	});	
+
+	$('#cid').change(function()
+	{
+		$.getJSON('FetchServiceCenterByCompanyIdJSON',{ajax:true,cid:$('#cid').val()},function(data)
+		{
+			$('#sid').empty();
+			$('#sid').append($('<option>').val('-Select-').text('-Select-'));	  
+			$.each(data,function(i,item)
+			{
+				$('#sid').append($('<option>').val(item.SCID).text(item.FIRMNAME));	  
+			});
+		});
+	});
+});

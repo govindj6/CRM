@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+.body1
+{
+	position:relative;
+	background-image:url("F:/Java/Eclipse/CRM/WebContent/images/css/bg1.jpg");
+	background-repeat:no-repeat; 
+	background-size:cover;
+}
+.body2
+{
+	position:relative;
+	background-image:url("F:/Java/Eclipse/CRM/WebContent/images/css/bg2.jpg");
+	background-repeat:no-repeat; 
+	background-size:cover;
+}
+td
+{
+	
+}
